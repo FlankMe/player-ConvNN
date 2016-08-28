@@ -15,7 +15,11 @@ and returns:
 Download the files `CNN_Agent.py` and `Parameters_CNN.ckpt` to the same folder as the game `asteroids v1.0.py`, which can be found [here][2].  
 Then, launch the game `asteroids v1.0.py` and enjoy watching the AI playing it.  
 
-<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/instance.gif" width="60%" />
+The below is a brief instance of the game. Note that the CNN only requires 5 hours of playing/training to get to this level.  
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/instance.gif" width="50%" />
+
+In here, I modified the settings of the videogame to make it very difficult, even for a human. The agent appears to be doing very well anyway (certainly better than I would do!).  
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/instance_hard_settings.gif" width="50%" />
  
 ### Optimal strategy vs State-Action value function
 One of the challenges of the project was to measure the algorithm's performance.  
@@ -46,7 +50,7 @@ More specifically, the algorithm involves:
 I chose to use:  
 - a different **activation function**: I used the leaky ReLU function, defined as `max(a*z, z)` with `a << 1`, as opposed to the simple ReLU function defined as `max(0, z)`. The reason for this was that the ReLU function led to many neurons "dying" during training as they got stuck in permanently negative territory and became impossible to train further. It took me long time to identify this issue;  
 - a different **network**: this CNN is deeper (3 convolutional layers), but uses less parameters (smaller filters and less kernels) as well as a smaller feed forward hidden layer;  
-- a more **flexible** graph that allows to easily add *maxpooling layers* and an implementation of the *dropout technique*. In fairness, I ended up using none of these extra features as it didn't appear to any value.  
+- a more **flexible** graph that allows to easily add *maxpooling layers* and an implementation of the *dropout technique*. In fairness, I ended up using none of these extra features as they didn't seem to any value.  
 
 ### Visual processing
 Before feeding the screen's image to the CNN, the input is first pre-processed: the image is converted to grey scale, compressed to a smaller resolution, and stacked to previous frames [*I chose to fed the CNN with the 3 most recent frames stacked together*].  
