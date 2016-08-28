@@ -15,7 +15,7 @@ and returns:
 Download the files `CNN_Agent.py` and `Parameters_CNN.ckpt` to the same folder as the game `asteroids v1.0.py`, which can be found [here][2].  
 Then, launch the game `asteroids v1.0.py` and enjoy watching the AI playing it.  
 
-<img src="instance.gif" width="60%" />
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/instance.gif" width="60%" />
  
 ### Optimal strategy vs State-Action value function
 One of the challenges of the project was to measure the algorithm's performance.  
@@ -24,7 +24,7 @@ I couldn't come up with any way to compare the agent's performance to the optima
 However, the bit that never stops impressing me is that Q-learning (among other RL methods) doesn't merely approximate the optimal strategy, but attempts to estimate the **discounted value of future rewards for each decision**.  
 The below graph shows the 30-step moving average of the ratio between estimated future rewards and realized discounted rewards obtained pursuing the strategy. The fact that the average ratio gravitates around `1.0`, gives me confidence that the agent is accurately estimating the value of its strategy.
 
-<img src="performance.jpeg" width="60%" />
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/performance.jpeg" width="60%" />
 
 ### Pseudocode
 The agent adopts the deep-Q learning algorithm: the state-action-value function is calibrated by minimizing (for small minibatches of previous observations) the below cost function 
@@ -51,11 +51,11 @@ I chose to use:
 ### Visual processing
 Before feeding the screen's image to the CNN, the input is first pre-processed: the image is converted to grey scale and compressed to a smaller resolution.  
 Here I show an example of an input image and its resulting (compressed) image fed to the CNN.  
-<img src="screen_s_snapshot.jpg" width="60%" />  
-<img src="pre-processed_state.jpg" width="60%" />  
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/screen_s_snapshot.jpg" width="60%" />  
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/pre-processed_state.jpg" width="60%" />  
 
 Out of interest, here is the visualization of the first-layer filters of the CNN. Contrary to other applications, understanding what the first-layer filters do is not intuitive at all.  
-<img src="filters.jpg" width="60%" />
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/filters.jpg" width="200%" />
 
 ### Resources & Acknowledgements
 * [Playing with Atari with Deep Reinforcement Learning][3], by DeepMind Technologies;  
