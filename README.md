@@ -44,9 +44,9 @@ More specifically, the algorithm involves:
 
 ### Key differences with DeepMind's architecture
 I chose to use:  
-1. a different **network**: this CNN is deeper (3 convolutional layers), but uses less parameters (smaller filters and less kernels) as well as a smaller feed forward hidden layer.  
-2. a different **activation function**: I used the leaky ReLU function, defined as `max(a*z, z)` with `a << 1`, as opposed to the simple ReLU function defined as `max(0, z)`. The reason for this was that the ReLU function led to many neurons "dying" during training as they got stuck in permanently negative territory and became impossible to train further. It took me long time to identify this issue.  
-3. a more **flexible** graph that allows to easily add *maxpooling layers* and an implementation of the *dropout technique*. In fairness, I ended up using none of these extra features as it didn't appear to any value.  
+- a different **activation function**: I used the leaky ReLU function, defined as `max(a*z, z)` with `a << 1`, as opposed to the simple ReLU function defined as `max(0, z)`. The reason for this was that the ReLU function led to many neurons "dying" during training as they got stuck in permanently negative territory and became impossible to train further. It took me long time to identify this issue;  
+- a different **network**: this CNN is deeper (3 convolutional layers), but uses less parameters (smaller filters and less kernels) as well as a smaller feed forward hidden layer;  
+- a more **flexible** graph that allows to easily add *maxpooling layers* and an implementation of the *dropout technique*. In fairness, I ended up using none of these extra features as it didn't appear to any value.  
 
 ### Visual processing
 Before feeding the screen's image to the CNN, the input is first pre-processed: the image is converted to grey scale, compressed to a smaller resolution, and stacked to previous frames [*I chose to fed the CNN with the 3 most recent frames stacked together*].  
