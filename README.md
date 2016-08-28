@@ -49,13 +49,17 @@ I chose to use:
 3. a more **flexible** graph that allows to easily add *maxpooling layers* and an implementation of the *dropout technique*. In fairness, I ended up using none of these extra features as it didn't appear they added any value.  
 
 ### Visual processing
-Before feeding the screen's image to the CNN, the input is first pre-processed: the image is converted to grey scale and compressed to a smaller resolution.  
-Here I show an example of an input image and its resulting (compressed) image fed to the CNN.  
+Before feeding the screen's image to the CNN, the input is first pre-processed: the image is converted to grey scale, compressed to a smaller resolution, and stacked to previous frames [*I chose to fed the CNN with the 3 most recent frames stacked together*].  
+
+Here I show an example of an input image and its resulting (compressed) stacked images fed to the CNN:  
+
 <img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/screen_s_snapshot.jpg" width="60%" />  
+
 <img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/pre-processed_state.jpg" width="60%" />  
 
-Out of interest, here is the visualization of the first-layer filters of the CNN. Contrary to other applications, understanding what the first-layer filters do is not intuitive at all.  
-<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/filters.jpg" width="200%" />
+Out of interest, here is the visualization of the first-layer filters of the CNN.  
+Contrary to other applications, understanding what the first-layer filters do is not intuitive at all.  
+<img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/filters.jpg" width="160%" />
 
 ### Resources & Acknowledgements
 * [Playing with Atari with Deep Reinforcement Learning][3], by DeepMind Technologies;  
