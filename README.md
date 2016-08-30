@@ -15,7 +15,7 @@ and returns:
 Download the files `CNN_Agent.py` and `Parameters_CNN.ckpt` to the same folder as the game `asteroids v1.0.py`, which can be found [here][2].  
 Then, launch the game `asteroids v1.0.py` and enjoy watching the AI playing it.  
 
-The below is a brief instance of the game. Note that the CNN only requires 5 hours of playing/training to get to this level.  
+The below is a brief instance of the game. Notice that to get to this level the CNN only requires 150,000 frame observations, i.e. approx 5 hours of playing.  
 <img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/instance.gif" width="50%" />
 
 In here, I modified the settings of the videogame to make it very difficult, even for a human. The agent appears to be doing very well anyway (certainly better than I would do!).  
