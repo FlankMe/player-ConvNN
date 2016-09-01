@@ -1,7 +1,7 @@
 # player-ConvNN
 **Implementation of a Convolutional Neural Network that applies the deep Q-learning algorithm to play PyGame video games.**  
-Specifically, I intended to replicate DeepMind's [paper][3] for a simple arcade game from my GitHub page, [Asteroids][1]. I ended up making slight variations to DeepMind's implementation (see more below).
-The interesting bit of the code is that the game state is expressed in raw pixel data, whose value estimation requires a CNN.
+Specifically, I intended to replicate DeepMind's [paper][3] for a simple arcade game from my GitHub page, [Asteroids][1]. I ended up making slight variations to DeepMind's implementation (see more below).  
+The interesting bit of the code is that the game's state is expressed in raw pixel data, whose value estimation requires a CNN. Check out the [Youtube video][8] that shows the CNN's behaviour under different degrees of difficulty.  
 
 As inputs, it accepts:
 - `image`: array, image made of raw pixels captured from the game screen;  
@@ -82,3 +82,4 @@ Contrary to other applications, understanding what the first-layer filters do is
 [5]: https://gist.github.com/DanielSlater/2b9afcc9dfa6eda0f39d#file-create-network
 [6]: http://www.pygame.org/download.shtml
 [7]: https://www.tensorflow.org/versions/r0.7/get_started/os_setup.html
+[8]: https://youtu.be/cPm6IbHtDZs
