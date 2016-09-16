@@ -26,7 +26,7 @@ One of the challenges of the project was to measure the algorithm's performance.
 I couldn't come up with any way to compare the agent's performance to the optimal strategy (assuming it exists). I could only observe its performance vs humans.   
 
 However, the bit that never stops impressing me is that Q-learning (among other RL methods) doesn't merely approximate the optimal strategy, but attempts to estimate the **discounted value of future rewards for each decision**.  
-The below graph shows the 30-step moving average of the ratio between estimated future rewards and realized discounted rewards obtained pursuing the strategy. The fact that the average ratio gravitates around `1.0`, gives me confidence that the agent is accurately estimating the value of its strategy.
+The below graph shows the 50-step moving average of the ratio between estimated future rewards and realized discounted rewards obtained pursuing the strategy. The fact that the average ratio gravitates around `1.0`, gives me confidence that the agent is accurately estimating the value of its strategy.
 
 <img src="https://github.com/FlankMe/player-ConvNN/blob/master/images/performance.jpeg" width="60%" />
 
@@ -53,7 +53,7 @@ I chose to use:
 - a more **flexible** graph that allows to easily add *maxpooling layers* and an implementation of the *dropout technique*. In fairness, I ended up using none of these extra features as they didn't seem to any value.  
 
 ### Visual processing
-Before feeding the screen's image to the CNN, the input is first pre-processed: the image is converted to grey scale, compressed to a smaller resolution, and stacked to previous frames [*I chose to fed the CNN with the 3 most recent frames stacked together*].  
+Before feeding the screen's image to the CNN, the input is pre-processed first: the image is converted to grey scale, compressed to a smaller resolution, and stacked to previous frames [*I chose to feed the CNN with the 3 most recent frames stacked together*].  
 
 Here I show an example of an input image and its resulting (compressed) stacked images fed to the CNN:  
 
